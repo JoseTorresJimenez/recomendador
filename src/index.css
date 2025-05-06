@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans text-neutral-light antialiased;
+    /* Fondo moderno y sobrio: degradado oscuro */
+    background: linear-gradient(135deg, #5B21B6, #047857);
+  }
+}
