@@ -1,3 +1,5 @@
+(React)
+
 Aplicacion que permite busacar recomendaciones de peliculas segun genero y libros segun autores.
 Permite busacar peliculas por mas de un solo genero, pero permite buscar libros por un solo autor a la vez.
 Se pueden buscar las peliculas y los libros al mismo tiempo, contando con un filtro para mostrar solo las peliculas o los libros.
