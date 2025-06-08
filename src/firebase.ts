@@ -11,5 +11,17 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID!,
 };
 
+console.log('🔥🔥 FIREBASE CONFIG:', {
+  hasApiKey: !!firebaseConfig.apiKey,
+  authDomain: firebaseConfig.authDomain,
+  projectId: firebaseConfig.projectId,
+  hasStorageBucket: !!firebaseConfig.storageBucket,
+  hasMessagingSenderId: !!firebaseConfig.messagingSenderId,
+  hasAppId: !!firebaseConfig.appId,
+});
+
 const app = initializeApp(firebaseConfig);
+console.log('🔥✅ Firebase app initialized:', app.name);
+
 export const db = getFirestore(app);
+console.log('🔥✅ Firestore initialized:', !!db);

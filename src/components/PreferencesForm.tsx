@@ -120,49 +120,55 @@ export const PreferencesForm: React.FC<Props> = ({ onSubmit }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-6 p-8 bg-neutral-900 rounded-2xl shadow-card max-w-lg mx-auto"
+      className="space-y-4 sm:space-y-6 p-4 sm:p-6 lg:p-8 bg-neutral-900 rounded-2xl shadow-card max-w-lg mx-auto mobile-card-shadow"
     >
-      <h2 className="text-3xl font-semibold text-accent text-center">
+      <h2 className="text-2xl sm:text-3xl font-semibold text-accent text-center mobile-heading-scale">
         Tus Preferencias
       </h2>
 
       {/* Géneros */}
       <div>
-        <label className="block mb-1 font-medium text-accent-light">
+        <label className="block mb-2 font-medium text-accent-light mobile-text-scale">
           Géneros de Películas
         </label>
-        <AsyncCreatableSelect
-          isMulti
-          cacheOptions
-          defaultOptions
-          loadOptions={loadGenreOptions}
-          value={genres}
-          onChange={nv => setGenres((nv || []) as MultiValue<Option>)}
-          placeholder="Selecciona o escribe géneros..."
-          styles={customStyles}
-        />
+        <div className="min-h-[44px]">
+          <AsyncCreatableSelect
+            isMulti
+            cacheOptions
+            defaultOptions
+            loadOptions={loadGenreOptions}
+            value={genres}
+            onChange={nv => setGenres((nv || []) as MultiValue<Option>)}
+            placeholder="Selecciona o escribe géneros..."
+            styles={customStyles}
+            className="focus-visible-enhanced"
+          />
+        </div>
       </div>
 
       {/* Autores */}
       <div>
-        <label className="block mb-1 font-medium text-accent-light">
+        <label className="block mb-2 font-medium text-accent-light mobile-text-scale">
           Autores de Libros
         </label>
-        <AsyncCreatableSelect
-          isMulti
-          cacheOptions
-          defaultOptions
-          loadOptions={loadAuthorOptions}
-          value={authors}
-          onChange={nv => setAuthors((nv || []) as MultiValue<Option>)}
-          placeholder="Selecciona o escribe autores..."
-          styles={customStyles}
-        />
+        <div className="min-h-[44px]">
+          <AsyncCreatableSelect
+            isMulti
+            cacheOptions
+            defaultOptions
+            loadOptions={loadAuthorOptions}
+            value={authors}
+            onChange={nv => setAuthors((nv || []) as MultiValue<Option>)}
+            placeholder="Selecciona o escribe autores..."
+            styles={customStyles}
+            className="focus-visible-enhanced"
+          />
+        </div>
       </div>
 
       <button
         type="submit"
-        className="w-full py-3 rounded-lg bg-accent hover:bg-accent-dark text-white font-medium transition"
+        className="w-full py-3 sm:py-4 rounded-lg bg-accent hover:bg-accent-dark text-white font-medium transition touch-target focus-visible-enhanced mobile-button-enhanced mobile-text-scale"
       >
         Obtener recomendaciones
       </button>

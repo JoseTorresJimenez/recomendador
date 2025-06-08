@@ -1,9 +1,15 @@
 export interface Book {
   id: string;
-  volumeInfo: {
-    title: string;
-    authors?: string[];
-    description?: string;
-    imageLinks?: { thumbnail: string };
-  };
+  title: string;
+  authors: string[];
+  description: string;
+  imageLinks: { thumbnail?: string };
+  publishedDate: string;
+  pageCount: number;
+  categories: string[];
+  averageRating: number;
+  ratingsCount: number;
+  language: string;
+  previewLink: string;
+  infoLink: string;
 }

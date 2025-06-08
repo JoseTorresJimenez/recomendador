@@ -3,6 +3,10 @@ module.exports = {
   content: ["./index.html", "./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
+      screens: {
+        'xs': '475px',
+        '3xl': '1600px',
+      },
       colors: {
         primary: {
           light: '#A78BFA',
@@ -25,6 +29,18 @@ module.exports = {
       },
       boxShadow: {
         card: '0 4px 14px 0 rgba(0,0,0,0.10)',
+      },
+      spacing: {
+        '18': '4.5rem',
+        '88': '22rem',
+      },
+      minHeight: {
+        '12': '3rem',
+        '16': '4rem',
+      },
+      maxWidth: {
+        '8xl': '88rem',
+        '9xl': '96rem',
       }
     },
   },

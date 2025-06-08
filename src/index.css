@@ -11,3 +11,201 @@
     background: linear-gradient(135deg, #5B21B6, #047857);
   }
 }
+
+@layer utilities {
+  /* Animaciones personalizadas */
+  .animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .shadow-3xl {
+    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+
+  /* Responsive utilities */
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+
+  /* Touch-friendly buttons */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Safe area insets for mobile */
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  /* Enhanced mobile utilities */
+  .mobile-scroll {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  .mobile-text-scale {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+  }
+
+  .mobile-heading-scale {
+    font-size: clamp(1.5rem, 5vw, 2.25rem);
+  }
+
+  /* Enhanced focus states for mobile */
+  .focus-visible-enhanced:focus-visible {
+    outline: 2px solid rgb(147 197 253);
+    outline-offset: 2px;
+    border-radius: 0.375rem;
+  }
+
+  /* Mobile-optimized spacing */
+  .mobile-spacing {
+    padding: clamp(1rem, 3vw, 1.5rem);
+  }
+
+  .mobile-gap {
+    gap: clamp(0.75rem, 2vw, 1.25rem);
+  }
+
+  /* Responsive background gradients */
+  .bg-mobile-gradient {
+    background: linear-gradient(135deg, 
+      rgba(139, 92, 246, 0.1) 0%, 
+      rgba(59, 130, 246, 0.1) 50%, 
+      rgba(16, 185, 129, 0.1) 100%);
+  }
+
+  /* Enhanced button states for mobile */
+  .mobile-button-enhanced {
+    transition: all 0.2s ease;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  .mobile-button-enhanced:active {
+    transform: scale(0.95);
+  }
+
+  /* Mobile-optimized card shadows */
+  .mobile-card-shadow {
+    box-shadow: 
+      0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+
+  @media (max-width: 640px) {
+    .mobile-card-shadow {
+      box-shadow: 
+        0 2px 4px -1px rgba(0, 0, 0, 0.1),
+        0 1px 2px -1px rgba(0, 0, 0, 0.06);
+    }
+  }
+
+  /* Device orientation utilities */
+  .mobile-landscape-padding {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* Mobile keyboard handling */
+  .mobile-input-fix {
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+  }
+
+  /* Prevent zoom on focus for mobile inputs */
+  @media screen and (max-width: 640px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="password"],
+    textarea,
+    select {
+      font-size: 16px;
+    }
+  }
+
+  /* Enhanced scrolling performance */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Mobile-optimized focus rings */
+  @media (max-width: 640px) {
+    .focus-visible-enhanced:focus-visible {
+      outline: 3px solid rgb(147 197 253);
+      outline-offset: 2px;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Shimmer animation for skeleton loading */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+/* Mobile-optimized animations */
+@media (max-width: 640px) {
+  .animate-fade-in {
+    animation: fadeInMobile 0.8s ease-in-out;
+  }
+  
+  @keyframes fadeInMobile {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Reduced motion for mobile */
+  .animate-shimmer {
+    animation: shimmer 1.5s infinite;
+  }
+}
